@@ -6,12 +6,59 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import Snackbar from '@material-ui/core/Snackbar';
+
+function PositionedSnackbar() {
+    const [state, setState] = React.useState({
+        open: false,
+        vertical: 'top',
+        horizontal: 'center',
+    });
+
+    const { vertical, horizontal, open } = state;
+
+    const handleClick = newState => () => {
+        setState({ open: true, ...newState });
+    };
+
+    const handleClose = () => {
+        setState({ ...state, open: false });
+    };
+
+    return (
+        <div>
+            <Button onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>Top-Center</Button>
+            <Snackbar
+                anchorOrigin={{ vertical, horizontal }}
+                key={`${vertical},${horizontal}`}
+                open={open}
+                onClose={handleClose}
+                ContentProps={{
+                    'aria-describedby': 'message-id',
+                }}
+                message={<span id="message-id">I love snacks</span>}
+            />
+        </div>
+    );
+}
 
 export default class Search extends Component {
     constructor() {
         super()
         this.state = {
             keyWord: null,
+            initial: false,
+            color: null,
+        }
+    }
+
+    componentDidMount() {
+        if (!this.state.initial) {
+            let temp = this.randomBackground();
+            this.setState({
+                color: temp,
+                initial: true,
+            })
         }
     }
 
@@ -53,13 +100,25 @@ export default class Search extends Component {
     }
 
     handleGo = () => {
-        let keyWord=
-        window.location = `https://www.baidu.com/s?wd=${keyWord}`;
+        if (this.state.keyWord) {
+            window.location = `https://www.baidu.com/s?wd=${this.state.keyWord}`;
+        } else {
+            return (
+                <Snackbar
+                    anchorOrigin={'top', 'center'}
+                    open={true}
+                    ContentProps={{
+                        'aria-describedby': 'message-id',
+                    }}
+                    message={<span id="message-id">I love snacks</span>}
+                />
+            )
+        }
     }
 
     render() {
         return (
-            <div className="search-container" style={this.randomBackground()}>
+            <div className="search-container" style={this.state.color}>
                 <span className="search-title focus-in-contract-bck">TJUBOT导航</span>
                 <form className="search-input-group">
                     <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{

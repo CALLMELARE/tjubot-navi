@@ -9,18 +9,92 @@
                 "name": "天猫",
                 "icon": "",
                 "url": "https://www.tmall.com"
+            }, {
+                "name": "京东",
+                "icon": "",
+                "url": "https://www.jd.com"
+            }, {
+                "name": "Apple",
+                "icon": "",
+                "url": "https://www.apple.com"
+            },{
+                "name": "当当",
+                "icon": "",
+                "url": "https://www.dangdang.com"
+            },{
+                "name": "网易严选",
+                "icon": "",
+                "url": "https://you.163.com"
             }]
         },
         {
-            "title": "购物",
+            "title": "工具",
             "children": [{
-                "name": "淘宝",
+                "name": "12306",
                 "icon": "",
-                "url": "https://www.taobao.com"
+                "url": "https://www.12306.cn"
             }, {
-                "name": "天猫",
+                "name": "快递100",
                 "icon": "",
-                "url": "https://www.tmall.com"
+                "url": "https://www.kuaidi100.com"
+            },{
+                "name": "大众点评",
+                "icon": "",
+                "url": "https://www.dianping.com"
+            },{
+                "name": "网易邮箱",
+                "icon": "",
+                "url": "https://email.163.com"
+            },{
+                "name": "QQ邮箱",
+                "icon": "",
+                "url": "https://mail.qq.com"
+            }]
+        },{
+            "title": "社交",
+            "children": [{
+                "name": "微博",
+                "icon": "",
+                "url": "https://weibo.com"
+            }, {
+                "name": "微信",
+                "icon": "",
+                "url": "https://wx.qq.com"
+            },{
+                "name": "百度贴吧",
+                "icon": "",
+                "url": "https://tieba.baidu.com"
+            },{
+                "name": "知乎",
+                "icon": "",
+                "url": "https://zhihu.com"
+            },{
+                "name": "Github",
+                "icon": "",
+                "url": "https://github.com"
+            }]
+        },{
+            "title": "娱乐",
+            "children": [{
+                "name": "优酷",
+                "icon": "",
+                "url": "https://youku.com"
+            }, {
+                "name": "爱奇艺",
+                "icon": "",
+                "url": "https://iqiyi.com"
+            },{
+                "name": "腾讯视频",
+                "icon": "",
+                "url": "https://v.qq.com"
+            },{
+                "name": "哔哩哔哩",
+                "icon": "",
+                "url": "https://bilibili.com"
+            },{
+                "name": "斗鱼",
+                "icon": "",
+                "url": "https://douyu.com"
             }]
         }
     ]

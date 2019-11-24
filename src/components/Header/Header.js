@@ -20,7 +20,7 @@ export default class Header extends Component {
                         <img className="header-logo" src={Logo} />
                     </div>
                     <div className="right-menu">
-                        <IconButton edge="end" className="header-github"><GithubIcon /></IconButton>
+                        <IconButton href="https://github.com/CALLMELARE/tjubot-navi" edge="end" className="header-github"><GithubIcon /></IconButton>
                     </div>
                 </div>
         )

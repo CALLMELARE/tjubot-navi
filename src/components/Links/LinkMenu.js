@@ -58,8 +58,6 @@ function ScrollableTabsButtonAuto() {
         setValue(newValue);
     };
 
-
-
     let tabs = [], panels = [];
     if (linksConfig) {
         let data = linksConfig.links;
@@ -68,7 +66,8 @@ function ScrollableTabsButtonAuto() {
             tabs.push(<Tab label={data[i].title} {...a11yProps(i)} />)
             for (let j = 0; j < data[i].children.length; j++) {
                 icons.push(
-                    <Chip label={data[i].children[j].name} />
+                    // <Chip label={data[i].children[j].name} />
+                    <Chip label={data[i].children[j].name} component="a" href={data[i].children[j].url} clickable />
                 )
             }
             panels.push(<TabPanel value={value} index={i} className="tab-panel" >
@@ -97,7 +96,7 @@ function ScrollableTabsButtonAuto() {
 
 export default class LinkMenu extends Component {
 
-    
+
     render() {
         return (
             <div className="links-menu">

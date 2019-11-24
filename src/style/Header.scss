@@ -25,3 +25,16 @@ $standard-font-size:1.25rem;
         vertical-align: middle;
     }
 }
+
+@media screen and (max-width:425px){
+    .header-container{
+        max-height: 2.5rem;
+        .left-menu{
+            max-width: 200px;
+        }
+        .right-menu{
+            display: none;
+        }
+    }
+
+}

@@ -3,13 +3,15 @@
     height: 100%;
     top: 0;
     z-index: -1;
-        position: absolute;
-        background-size: cover;
-        background-position: center;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    path{
+        color: #ffffff;
+    }
     .search-input-group {
         margin: 1rem 0;
         display: flex;
@@ -19,6 +21,7 @@
         #search-input {
             min-width: 400px;
             color: #ffffff;
+            
         }
 
         #search-button {
@@ -38,6 +41,31 @@
 .MuiOutlinedInput-notchedOutline {
     border-color: #ffffff;
 }
+
+@media screen and (max-width:425px) {
+    .search-input-group {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        height: 48px !important;
+        input{
+            height: 11px !important;
+        }
+    }
+    .search-title{
+        font-size: 2rem !important;
+    }
+    #search-input{
+        min-width: 200px !important;
+    }
+}
+
+
+
+
+
+
+
+
 
 .focus-in-contract-bck {
     -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
