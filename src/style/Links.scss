@@ -1,8 +1,17 @@
 .links-container {
     position: relative;
+    display: flex;
+    justify-content: center;
 
     #links-open {
         position: fixed;
         bottom: 1rem;
+        left: 50%;
+        margin-left: -32px;
+    }
+
+    .tab-panel{
+        display: flex;
+        justify-content: center;
     }
 }

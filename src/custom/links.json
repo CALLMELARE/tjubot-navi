@@ -1,0 +1,27 @@
+{
+    "links": [{
+            "title": "购物",
+            "children": [{
+                "name": "淘宝",
+                "icon": "",
+                "url": "https://www.taobao.com"
+            }, {
+                "name": "天猫",
+                "icon": "",
+                "url": "https://www.tmall.com"
+            }]
+        },
+        {
+            "title": "购物",
+            "children": [{
+                "name": "淘宝",
+                "icon": "",
+                "url": "https://www.taobao.com"
+            }, {
+                "name": "天猫",
+                "icon": "",
+                "url": "https://www.tmall.com"
+            }]
+        }
+    ]
+}

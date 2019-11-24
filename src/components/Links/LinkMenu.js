@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import BuildIcon from '@material-ui/icons/Build';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import linksConfig from '../../custom/links.json';
+import Chip from '@material-ui/core/Chip';
+import '../../style/Links.scss';
+
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -56,9 +58,26 @@ function ScrollableTabsButtonAuto() {
         setValue(newValue);
     };
 
+
+
+    let tabs = [], panels = [];
+    if (linksConfig) {
+        let data = linksConfig.links;
+        for (let i = 0; i < data.length; i++) {
+            let icons = [];
+            tabs.push(<Tab label={data[i].title} {...a11yProps(i)} />)
+            for (let j = 0; j < data[i].children.length; j++) {
+                icons.push(
+                    <Chip label={data[i].children[j].name} />
+                )
+            }
+            panels.push(<TabPanel value={value} index={i} className="tab-panel" >
+                {icons}
+            </TabPanel>)
+        }
+    }
     return (
         <div className={classes.root}>
-
             <Tabs
                 value={value}
                 onChange={handleChange}
@@ -69,33 +88,16 @@ function ScrollableTabsButtonAuto() {
                 // aria-label="scrollable auto tabs example"
                 centered
             >
-                <Tab label="购物" {...a11yProps(0)} />
-                <Tab label="工具" {...a11yProps(1)} />
-                <Tab label="社交" {...a11yProps(2)} />
-                <Tab label="学习" {...a11yProps(3)} />
-                <Tab label="娱乐" {...a11yProps(4)} />
+                {tabs}
             </Tabs>
-
-            <TabPanel value={value} index={0}>
-                Item One
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                Item Four
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-                Item Five
-            </TabPanel>
+            {panels}
         </div>
     );
 }
 
 export default class LinkMenu extends Component {
+
+    
     render() {
         return (
             <div className="links-menu">

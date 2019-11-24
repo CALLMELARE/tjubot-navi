@@ -43,7 +43,7 @@ function SwipeableTemporaryDrawer() {
     );
 
     return (
-        <div>
+        <div className="center">
             <Button id="links-open" onClick={toggleDrawer('bottom', true)}><ArrowUpwardIcon /></Button>
             <SwipeableDrawer
                 anchor="bottom"

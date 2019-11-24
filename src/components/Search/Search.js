@@ -53,23 +53,24 @@ export default class Search extends Component {
     }
 
     handleGo = () => {
-
+        let keyWord=
+        window.location = `https://www.baidu.com/s?wd=${keyWord}`;
     }
 
     render() {
         return (
             <div className="search-container" style={this.randomBackground()}>
-                    <span className="search-title focus-in-contract-bck">TJUBOT导航</span>
-                    <form className="search-input-group">
-                        <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <SearchIcon />
-                                </InputAdornment>
-                            ),
-                        }} />
-                        <Button name="searchButton" id="search-button" onClick={this.handleGo} variant="outlined">Go!</Button>
-                    </form>
+                <span className="search-title focus-in-contract-bck">TJUBOT导航</span>
+                <form className="search-input-group">
+                    <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <SearchIcon />
+                            </InputAdornment>
+                        ),
+                    }} />
+                    <Button name="searchButton" id="search-button" onClick={this.handleGo} variant="outlined">Go!</Button>
+                </form>
             </div>
         )
     }
