@@ -1,36 +1,42 @@
 .search-container {
-    z-index: -1;
     width: 100%;
     height: 100%;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
     top: 0;
+    z-index: -1;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    .search-input-group{
+    .search-input-group {
         margin: 1rem 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        #search-input{
+
+        #search-input {
             min-width: 400px;
             color: #ffffff;
         }
-        #search-button{
+
+        #search-button {
             margin-left: 20px;
             color: #ffffff;
         }
     }
-    
-    .search-title{
+
+    .search-title {
         font-size: 2.5rem;
         font-family: sans-serif;
         color: #ffffff;
         letter-spacing: 0.3rem;
     }
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: #ffffff;
 }
 
 .focus-in-contract-bck {

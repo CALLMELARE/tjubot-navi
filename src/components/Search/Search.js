@@ -5,8 +5,7 @@ import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { createMuiTheme } from '@material-ui/core/styles';
-
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
 export default class Search extends Component {
     constructor() {
@@ -30,7 +29,7 @@ export default class Search extends Component {
 
         var randex = function () {
             //生成HEX颜色
-            return '#' + hexify(randum(200)) + hexify(randum(200)) + hexify(randum(200));
+            return '#' + hexify(randum(100) + 100) + hexify(randum(100) + 100) + hexify(randum(100) + 100);
         };
 
         var blender = function () {
@@ -48,7 +47,9 @@ export default class Search extends Component {
     }
 
     handleInputChandge = (e) => {
-        return e.target.value;
+        this.setState({
+            keyWord: e.target.value
+        })
     }
 
     handleGo = () => {
@@ -58,17 +59,17 @@ export default class Search extends Component {
     render() {
         return (
             <div className="search-container" style={this.randomBackground()}>
-                <span className="search-title focus-in-contract-bck">TJUBOT导航</span>
-                <form className="search-input-group">
-                    <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }} />
-                    <Button name="searchButton" id="search-button" onClick={this.handleGo} variant="outlined">Go!</Button>
-                </form>
+                    <span className="search-title focus-in-contract-bck">TJUBOT导航</span>
+                    <form className="search-input-group">
+                        <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <SearchIcon />
+                                </InputAdornment>
+                            ),
+                        }} />
+                        <Button name="searchButton" id="search-button" onClick={this.handleGo} variant="outlined">Go!</Button>
+                    </form>
             </div>
         )
     }

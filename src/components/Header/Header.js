@@ -17,7 +17,7 @@ export default class Header extends Component {
                 <div className="header-container">
                     <div className="left-menu">
                         <img className="header-logo" src={Shield} />
-                        {wid < 1024 ? <IconButton edge="start"><HomeIcon color={"primary"} /></IconButton> : <img className="header-logo" src={Logo} />}
+                        <img className="header-logo" src={Logo} />
                     </div>
                     <div className="right-menu">
                         <IconButton edge="end" className="header-github"><GithubIcon /></IconButton>
