@@ -7,8 +7,9 @@ $standard-font-size:1.25rem;
     margin: 1rem 0;
     justify-content: center;
 
+    display: none;
+
     .right-menu {
-        margin-left: 40%;
         display: flex;
         flex-direction: column;
         justify-content: center;

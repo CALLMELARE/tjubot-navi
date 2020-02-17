@@ -49,8 +49,11 @@ export default class Search extends Component {
             keyWord: null,
             initial: false,
             color: null,
+            username: null,
         }
     }
+
+
 
     componentDidMount() {
         if (!this.state.initial) {
@@ -94,9 +97,31 @@ export default class Search extends Component {
     }
 
     handleInputChandge = (e) => {
+        var theEvent = window.event || e;
+        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+        if (code == 13) {
+            this.handleGo();
+        }
         this.setState({
             keyWord: e.target.value
         })
+    }
+
+    getTimeState = () => {
+        let timeNow = new Date();
+        console.log(timeNow)
+        let hours = timeNow.getHours();
+        let text = ``;
+        if (hours >= 0 && hours <= 10) {
+            text = `早上好`;
+        } else if (hours > 10 && hours <= 14) {
+            text = `中午好`;
+        } else if (hours > 14 && hours <= 18) {
+            text = `下午好`;
+        } else if (hours > 18 && hours <= 24) {
+            text = `晚上好`;
+        }
+        return text;
     }
 
     handleGo = () => {
@@ -110,17 +135,23 @@ export default class Search extends Component {
                     ContentProps={{
                         'aria-describedby': 'message-id',
                     }}
-                    message={<span id="message-id">I love snacks</span>}
+                    message={<span id="message-id"></span>}
                 />
             )
         }
     }
 
+    getSearchData(event) {
+        event.preventDefault();
+        this.handleGo();
+    }
+
     render() {
+
         return (
             <div className="search-container" style={this.state.color}>
-                <span className="search-title focus-in-contract-bck">TJUBOT导航</span>
-                <form className="search-input-group">
+                <span className="search-title focus-in-contract-bck">{this.state.username ? this.state.username + "," + this.getTimeState() : this.getTimeState()}</span>
+                <form className="search-input-group" onSubmit={(e) => this.getSearchData(e)}>
                     <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">

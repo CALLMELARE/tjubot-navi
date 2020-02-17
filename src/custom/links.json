@@ -96,6 +96,21 @@
                 "icon": "",
                 "url": "https://douyu.com"
             }]
+        },{
+            "title": "学习",
+            "children": [{
+                "name": "雨课堂",
+                "icon": "",
+                "url": "https://www.yuketang.cn/v2/web/index"
+            }, {
+                "name": "中国大学MOOC",
+                "icon": "",
+                "url": "https://www.icourse163.org/"
+            },{
+                "name": "智慧树",
+                "icon": "",
+                "url": "https://www.zhihuishu.com/"
+            }]
         }
     ]
 }
