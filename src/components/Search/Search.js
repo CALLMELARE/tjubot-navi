@@ -126,7 +126,8 @@ export default class Search extends Component {
 
     handleGo = () => {
         if (this.state.keyWord) {
-            window.location = `https://www.baidu.com/s?wd=${this.state.keyWord}`;
+            window.location = `https://wiki.tjubot.cn/search/${this.state.keyWord}`;
+            // window.location = `https://www.baidu.com/s?wd=${this.state.keyWord}`;
         } else {
             return (
                 <Snackbar
@@ -152,7 +153,7 @@ export default class Search extends Component {
             <div className="search-container" style={this.state.color}>
                 <span className="search-title focus-in-contract-bck">{this.state.username ? this.state.username + "," + this.getTimeState() : this.getTimeState()}</span>
                 <form className="search-input-group" onSubmit={(e) => this.getSearchData(e)}>
-                    <TextField onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
+                    <TextField  placeholder="在北洋维基中搜索" onChange={this.handleInputChandge.bind(this)} id="search-input" variant="outlined" InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
                                 <SearchIcon />
